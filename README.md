@@ -2,7 +2,7 @@
 
 A modern, responsive, and animated portfolio website built with [Next.js](https://nextjs.org/) and [Tailwind CSS](https://tailwindcss.com/), showcasing my software engineering projects, technical skills, and creative problem-solving.
 
-<img width="1470" height="828" alt="image" src="https://github.com/user-attachments/assets/965cad8a-93b2-45a2-b8f6-d03736a2f875" />
+<img width="1470" height="827" alt="image" src="https://github.com/user-attachments/assets/f36401a5-40c8-4a93-9033-8200cc88e6ce" />
 
 ---
 
