@@ -1,0 +1,10 @@
+<svg viewBox="0 0 427.5 427.5" xmlns="http://www.w3.org/2000/svg">
+    <g transform="matrix(1.25,0,0,-1.25,0,427.5)">
+        <g transform="scale(.24)">
+            <path
+                    d="m5.25 358.25v1061h1062l350-350h-807l793-793-257-257-791 790v-803l-350 352"
+                    fill="currentColor"
+            />
+        </g>
+    </g>
+</svg>
