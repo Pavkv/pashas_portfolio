@@ -92,7 +92,7 @@ export default function Intro() {
                 >
                     <div className="relative h-full aspect-[3/4]">
                         <Image
-                            src="/title_image.jpg"
+                            src="/pashas_portfolio/title_image.jpg"
                             alt="Title Image"
                             fill
                             className="object-cover rounded-md"
@@ -110,7 +110,7 @@ export default function Intro() {
                     <div className="text-right text-xl">
                         Germantown, MD
                         <Image
-                            src="/location_icon.svg"
+                            src="/pashas_portfolio/location_icon.svg"
                             alt="Location Icon"
                             width={18}
                             height={18}
