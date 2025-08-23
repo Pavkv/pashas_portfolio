@@ -1,36 +1,45 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Pasha's Zobov — Portfolio Website
 
-## Getting Started
+A modern, responsive, and animated portfolio website built with [Next.js](https://nextjs.org/) and [Tailwind CSS](https://tailwindcss.com/), showcasing my software engineering projects, technical skills, and creative problem-solving.
 
-First, run the development server:
+<img width="1470" height="828" alt="image" src="https://github.com/user-attachments/assets/965cad8a-93b2-45a2-b8f6-d03736a2f875" />
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+---
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 🚀 Live Site
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+🌐 [pavelzobov.dev](https://your-deployed-url.com)  
+🎥 Includes project demo videos, animated transitions, and elegant UI/UX interactions.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+---
 
-## Learn More
+## ✨ Features
 
-To learn more about Next.js, take a look at the following resources:
+- Scroll-triggered animations using [Framer Motion](https://www.framer.com/motion/)
+- Gradient transitions and hover effects for a polished user experience
+- Responsive design optimized for desktop and mobile
+- Section-based navigation with smooth scroll
+- Dynamic time-based footer with scroll-to-top button
+- Embedded video previews for featured projects
+- Stylish contact form with custom alerts and transitions
+- Custom-built grid layout for skills and expertise
+- Semantic HTML5 with accessibility-first design
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+---
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## 🛠️ Tech Stack
 
-## Deploy on Vercel
+- **Framework**: Next.js 14
+- **Styling**: Tailwind CSS, Custom CSS Modules
+- **Animations**: Framer Motion, GSAP (optional)
+- **Icons**: Lucide Icons
+- **Forms**: Custom React + useState logic
+- **Media**: Embedded video players for project demos
+- **Deployment**: GitHub Pages
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+---
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## 👨‍💻 Author
+
+[Pasha Zobov](https://github.com/Pavkv)
+2025
