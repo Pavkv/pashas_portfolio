@@ -104,16 +104,16 @@ export default function About() {
                     className="flex-1 max-w-3xl text-left"
                 >
                     <h3 className="text-3xl md:text-4xl font-bold mb-12">
-                        I’m a software engineer who thrives on turning complex ideas into scalable, high-performance web applications.
+                        I&apos;m a software engineer who thrives on turning complex ideas into scalable, high-performance web applications.
                     </h3>
                     <div className="flex flex-col md:flex-row gap-8 md:gap-24 items-start">
                         <p className="text-xl font-semibold whitespace-nowrap">(ABOUT ME)</p>
                         <p className="text-lg leading-relaxed flex-1 min-w-[280px]">
-                            I’m a full-stack software engineer passionate about creating elegant, efficient, and intuitive digital experiences. My toolkit includes JavaScript, TypeScript, Python, Java, and C#, and I love pairing these with modern frameworks like React, Node.js, Express, MongoDB, and PostgreSQL.
+                            I&apos;m a full-stack software engineer passionate about creating elegant, efficient, and intuitive digital experiences. My toolkit includes JavaScript, TypeScript, Python, Java, and C#, and I love pairing these with modern frameworks like React, Node.js, Express, MongoDB, and PostgreSQL.
                             <br /><br />
-                            From crafting intuitive user interfaces to fine-tuning performance and implementing secure authentication with JWT, I focus on building products that are both seamless and robust. I've taken full-stack projects from concept to deployment—always with a focus on scalability and accessibility.
+                            From crafting intuitive user interfaces to fine-tuning performance and implementing secure authentication with JWT, I focus on building products that are both seamless and robust. I&apos;ve taken full-stack projects from concept to deployment—always with a focus on scalability and accessibility.
                             <br /><br />
-                            Collaboration drives my process. I’ve mentored teams, optimized workflows, and built scalable solutions while balancing technical depth and user-focused design.
+                            Collaboration drives my process. I&apos;ve mentored teams, optimized workflows, and built scalable solutions while balancing technical depth and user-focused design.
                         </p>
                     </div>
                 </motion.div>
