@@ -36,7 +36,7 @@ export default function Intro() {
                 </h1>
             </motion.div>
 
-            <div className="flex-1 flex flex-col lg:flex-row items-stretch gap-12 mt-10 text-center lg:text-left">
+            <div className="flex-1 flex flex-col lg:flex-row items-stretch justify-between gap-12 mt-10 text-center lg:text-left">
 
                 {/* Left Text Block */}
                 <motion.div

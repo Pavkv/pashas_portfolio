@@ -38,7 +38,7 @@ export default function About() {
     return (
         <section
             id="about"
-            className="w-full px-4 sm:px-6 md:px-8 py-24 text-[#2b2b2b]"
+            className="w-full px-4 sm:px-6 md:px-8 py-24 text-[#2b2b2b] overflow-x-hidden"
         >
             <div className="w-full max-w-screen-2xl mx-auto flex flex-col md:flex-row justify-between">
                 <motion.h2
