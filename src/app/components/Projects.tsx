@@ -2,6 +2,7 @@
 
 import { useEffect, useRef, useState } from 'react';
 import { motion } from 'motion/react';
+import {basePath} from "@/utils/functions";
 
 const projects = [
     {
@@ -12,7 +13,7 @@ const projects = [
         tag: 'In Development',
         description: 'A modern reimagining of the Theatre Experiment website — a multilingual, media-rich, and accessible digital home for a vibrant theater group.',
         url: 'https://theaterexperiment.com',
-        video: '/pashas_portfolio/theater_experiment.mp4',
+        video: `${basePath}/theater_experiment.mp4`,
     },
     {
         id: 2,
@@ -22,7 +23,7 @@ const projects = [
         tag: 'Full-Stack',
         description: 'Flash Point is a full-stack news app that helps users cut through information overload by enabling keyword-based search, save, and filter of articles.',
         url: 'https://flashpoint.twilightparadox.com/',
-        video: '/pashas_portfolio/flash_point.mp4',
+        video: `${basePath}/flash_point.mp4`,
     },
     {
         id: 3,
@@ -32,7 +33,7 @@ const projects = [
         tag: 'Full-Stack',
         description: 'WTWR is a weather-based clothing recommendation app that offers personalized outfit suggestions based on real-time weather data, helping users dress confidently and appropriately for current conditions.',
         url: 'https://whatowearexpress.twilightparadox.com/',
-        video: '/pashas_portfolio/what_to_wear.mp4',
+        video: `${basePath}/what_to_wear.mp4`,
     },
     {
         id: 4,
@@ -42,7 +43,7 @@ const projects = [
         tag: 'Front-End',
         description: 'SPOTS is a responsive social media app that enables users to share photos and interact with others, offering a simplified, intuitive platform for visual connection and engagement.',
         url: 'https://pavkv.github.io/se_project_spots/',
-        video: '/pashas_portfolio/spots.mp4',
+        video: `${basePath}/spots.mp4`,
     }
 ];
 
@@ -76,7 +77,10 @@ export default function Projects() {
     }, []);
 
     return (
-        <section className="bg-black text-[#e8e8e2] w-full px-6 py-24 scroll-mt-14" id="projects">
+        <section
+            id="projects"
+            className="bg-black text-[#e8e8e2] w-full box-border px-4 sm:px-6 md:px-8 py-24 scroll-mt-14"
+        >
             <motion.h2
                 className="text-5xl md:text-7xl font-extrabold mb-24 tracking-tight flex items-end gap-1"
                 initial={{ opacity: 0, y: -40 }}
@@ -88,7 +92,8 @@ export default function Projects() {
                 <span className="mb-1 scale-y-[0.85] ml-1">/</span>
             </motion.h2>
 
-            <div className="flex relative min-h-screen">
+            <div className="flex relative flex-col md:flex-row">
+                {/* Sticky Counter */}
                 <div className="w-24 md:w-48 sticky top-32 h-fit pl-6">
                     <motion.div
                         key={activeIndex}
@@ -101,8 +106,9 @@ export default function Projects() {
                     </motion.div>
                 </div>
 
+                {/* Projects List */}
                 <div
-                    className="flex-1 flex flex-col gap-44 px-4 md:px-12 py-32 max-w-4xl ml-auto"
+                    className="flex-1 flex flex-col gap-32 md:gap-44 px-2 md:px-8 py-16 max-w-4xl ml-auto"
                     ref={containerRef}
                 >
                     {projects.map((project, i) => (
@@ -115,6 +121,7 @@ export default function Projects() {
                             viewport={{ once: false, amount: 0.4 }}
                             transition={{ duration: 0.6, delay: 0.1 * i }}
                         >
+                            {/* Video Preview */}
                             <div className="relative aspect-[16/9] overflow-hidden rounded-xl group border border-neutral-700 shadow-xl">
                                 <video
                                     src={project.video}
@@ -129,16 +136,17 @@ export default function Projects() {
                                 </div>
                             </div>
 
+                            {/* Details */}
                             <div className="space-y-2">
                                 <p className="uppercase text-sm text-[#999]">{project.subtitle}</p>
-                                <div className="flex justify-between items-center">
-                                    <h3 className="text-2xl font-semibold">{project.name}</h3>
-                                    <div className="flex gap-2 text-xs">
+                                <div className="flex justify-between items-center flex-wrap gap-2">
+                                    <h3 className="text-2xl font-semibold break-words">{project.name}</h3>
+                                    <div className="flex gap-2 text-xs flex-wrap">
                                         <span className="px-3 py-1 border border-[#888] rounded-full">{project.tag}</span>
                                         <span className="px-3 py-1 border border-[#888] rounded-full">{project.year}</span>
                                     </div>
                                 </div>
-                                <p className="text-base">{project.description}</p>
+                                <p className="text-base break-words">{project.description}</p>
                                 <a
                                     href={project.url}
                                     target="_blank"

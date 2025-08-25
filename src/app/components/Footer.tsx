@@ -35,8 +35,9 @@ export default function Footer() {
         'absolute left-0 -bottom-1 w-0 h-[2px] bg-[#7c0a02] transition-all group-hover:w-full';
 
     return (
-        <footer className="w-full bg-[#f5f5f0] text-[#2b2b2b] px-6 py-16">
+        <footer className="w-full overflow-x-hidden bg-[#f5f5f0] text-[#2b2b2b] px-4 sm:px-6 md:px-8 py-16">
             <div className="max-w-screen-xl mx-auto grid md:grid-cols-3 gap-16 items-start">
+                {/* Menu */}
                 <div>
                     <h3 className="text-lg font-semibold mb-3">Menu</h3>
                     <hr className="mb-4 border-[#ccc]" />
@@ -58,6 +59,7 @@ export default function Footer() {
                     </ul>
                 </div>
 
+                {/* Socials */}
                 <div>
                     <h3 className="text-lg font-semibold mb-3">Socials</h3>
                     <hr className="mb-4 border-[#ccc]" />
@@ -87,19 +89,23 @@ export default function Footer() {
                     </ul>
                 </div>
 
+                {/* Local Time */}
                 <div className="flex flex-col items-start md:items-end">
                     <h3 className="text-sm font-semibold uppercase mb-1">Local Time</h3>
                     <p className="font-mono text-sm text-[#444]">{localTime}</p>
                 </div>
             </div>
 
-            <button
-                onClick={scrollToTop}
-                className="fixed bottom-8 right-8 w-12 h-12 rounded-full bg-[#d4d4c6] text-[#2b2b2b] flex items-center justify-center shadow-md hover:bg-[#aaa] transition"
-                aria-label="Scroll to top"
-            >
-                <ArrowUp />
-            </button>
+            {/* Scroll to top button */}
+            <div className="fixed bottom-8 right-8 max-w-screen overflow-x-hidden">
+                <button
+                    onClick={scrollToTop}
+                    className="w-12 h-12 rounded-full bg-[#d4d4c6] text-[#2b2b2b] flex items-center justify-center shadow-md hover:bg-[#aaa] transition"
+                    aria-label="Scroll to top"
+                >
+                    <ArrowUp />
+                </button>
+            </div>
         </footer>
     );
 }

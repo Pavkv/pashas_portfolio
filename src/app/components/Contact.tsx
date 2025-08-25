@@ -28,14 +28,14 @@ export default function Contact() {
     return (
         <motion.section
             id="contact"
-            className="min-h-screen w-full px-6 py-24 bg-gradient-to-b from-[#e8e8e2] to-[#2b2b2b] text-[#e8e8e2] flex flex-col"
+            className="w-full px-4 sm:px-6 md:px-8 py-24 bg-gradient-to-b from-[#e8e8e2] to-[#2b2b2b] text-[#e8e8e2] flex flex-col"
             initial={{ opacity: 0.7, scale: 0.98 }}
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: false }}
             transition={{ duration: 0.6 }}
         >
             <motion.h2
-                className="text-5xl md:text-7xl font-extrabold mb-20 tracking-tight text-[#2b2b2b] text-left w-full max-w-xl"
+                className="text-5xl md:text-7xl font-extrabold mb-20 tracking-tight text-[#2b2b2b] text-left w-full max-w-screen-xl mx-auto"
                 initial={{ opacity: 0, y: -40 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: false }}
@@ -50,7 +50,7 @@ export default function Contact() {
 
             <motion.form
                 onSubmit={handleSubmit}
-                className="w-full max-w-xl bg-[#1a1a1a]/90 border border-[#333] backdrop-blur-md rounded-xl px-8 py-12 space-y-8 shadow-2xl mx-auto"
+                className="w-full max-w-xl bg-[#1a1a1a]/90 border border-[#333] backdrop-blur-md rounded-xl px-6 sm:px-8 py-12 space-y-8 shadow-2xl mx-auto"
                 initial={{ opacity: 0, y: 40 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8 }}
@@ -84,24 +84,36 @@ export default function Contact() {
                     };
 
                     return (
-                        <motion.div custom={i} key={field} variants={inputVariants} initial="hidden" whileInView="visible">
-                            {isTextarea ? <textarea rows={5} {...props} /> : <input type={field === 'email' ? 'email' : 'text'} {...props} />}
+                        <motion.div
+                            custom={i}
+                            key={field}
+                            variants={inputVariants}
+                            initial="hidden"
+                            whileInView="visible"
+                            viewport={{ once: false }}
+                        >
+                            {isTextarea ? (
+                                <textarea rows={5} {...props} />
+                            ) : (
+                                <input type={field === 'email' ? 'email' : 'text'} {...props} />
+                            )}
                         </motion.div>
                     );
                 })}
 
                 <motion.button
                     type="button"
+                    aria-label="Submit contact form"
                     disabled={submitted}
                     whileHover={{ scale: submitted ? 1 : 1.05 }}
                     whileTap={{ scale: submitted ? 1 : 0.95 }}
-                    className={`w-full py-4 rounded-[50] font-semibold text-lg transition-colors shadow-md ${
+                    className={`w-full py-4 rounded-full font-semibold text-lg transition-colors shadow-md ${
                         submitted
                             ? 'bg-[#7c0a02] text-[#e8e8e2] cursor-default animate-pulse'
                             : 'bg-[#e8e8e2] text-[#2b2b2b] hover:bg-[#7c0a02] hover:text-[#e8e8e2] cursor-pointer'
                     }`}
                 >
-                    {submitted ? 'Message Sent ✓' : 'Send Message → '}
+                    {submitted ? 'Message Sent ✓' : 'Send Message →'}
                 </motion.button>
             </motion.form>
         </motion.section>

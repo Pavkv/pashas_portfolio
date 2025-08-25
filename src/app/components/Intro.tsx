@@ -1,9 +1,10 @@
 'use client';
 
 import { useEffect, useState } from 'react';
-import { motion } from "motion/react"
+import { motion } from "motion/react";
 import { DateTime } from 'luxon';
 import Image from 'next/image';
+import { basePath } from "@/utils/functions";
 
 export default function Intro() {
     const [currentDate, setCurrentDate] = useState('');
@@ -19,33 +20,36 @@ export default function Intro() {
     }, []);
 
     return (
-        <section className="h-screen flex flex-col px-6 pb-24 text-[#2b2b2b] relative" id="intro">
+        <section
+            id="intro"
+            className="w-full flex flex-col px-4 sm:px-6 md:px-8 pb-24 pt-16 text-[#2b2b2b] relative"
+        >
             <motion.div
-                className="w-full pt-12"
+                className="w-full"
                 initial={{ opacity: 0, y: -40 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: false }}
                 transition={{ duration: 1, ease: 'easeOut' }}
             >
-                <h1 className="text-[20.25vw] font-medium leading-[0.9] tracking-tighter scale-y-75">
+                <h1 className="text-[20.25vw] font-medium leading-[0.9] tracking-tighter scale-y-75 text-center">
                     Pavel Zobov
                 </h1>
             </motion.div>
 
-            <div className="flex-1 flex flex-col md:flex-row items-stretch gap-12 text-center md:text-left">
+            <div className="flex-1 flex flex-col lg:flex-row items-stretch gap-12 mt-10 text-center lg:text-left">
 
+                {/* Left Text Block */}
                 <motion.div
-                    className="flex flex-col justify-center items-center md:items-start h-full max-w-md mx-auto md:mx-0"
+                    className="flex flex-col justify-center items-center lg:items-start max-w-2xl mx-auto lg:mx-0"
                     initial={{ opacity: 0, y: 30 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: false }}
                     transition={{ duration: 0.8, ease: 'easeOut', delay: 0.3 }}
                 >
                     <motion.p
-                        className="text-3xl italic mb-6"
+                        className="text-xl sm:text-2xl md:text-3xl italic mb-6 max-w-xl"
                         initial={{ opacity: 0, x: -20 }}
                         whileInView={{ opacity: 1, x: 0 }}
-                        viewport={{ once: false }}
                         transition={{ delay: 0.5, duration: 0.6 }}
                     >
                         Transforming complexity into elegance, building intuitive experiences that resonate far beyond the screen.
@@ -53,15 +57,14 @@ export default function Intro() {
 
                     <motion.a
                         href="#contact"
-                        className="inline-block bg-[#2b2b2b] text-[#e8e8e2] hover:bg-[#a31914] px-6 py-6 rounded-full text-lg transition-colors"
+                        className="inline-block bg-[#2b2b2b] text-[#e8e8e2] hover:bg-[#a31914] px-6 py-4 rounded-full text-lg transition-colors"
                         initial={{ opacity: 0, scale: 0.95 }}
                         whileInView={{ opacity: 1, scale: 1 }}
-                        viewport={{ once: false }}
-                        transition={{ delay: 0, duration: 0.4 }}
+                        transition={{ delay: 0.7, duration: 0.4 }}
                         whileHover={{ scale: 1.05, y: -2 }}
                         whileTap={{ scale: 0.97 }}
                     >
-                        <div className="flex items-center gap-2 text-[#e8e8e2] text-2xl">
+                        <div className="flex items-center gap-2 text-[#e8e8e2] text-lg sm:text-xl">
                             <span>Contact Me</span>
                             <div className="w-4 h-4 transform rotate-90 mb-[-1]">
                                 <svg
@@ -83,16 +86,16 @@ export default function Intro() {
                     </motion.a>
                 </motion.div>
 
+                {/* Middle Image */}
                 <motion.div
                     className="flex justify-center items-center"
                     initial={{ opacity: 0, scale: 0.9 }}
                     whileInView={{ opacity: 1, scale: 1 }}
-                    viewport={{ once: false }}
                     transition={{ delay: 0.9, duration: 0.5 }}
                 >
-                    <div className="relative h-full aspect-[3/4]">
+                    <div className="relative h-[52vh] sm:h-[50vw] md:h-[35vw] max-w-[300px] aspect-[4/3] object-contain">
                         <Image
-                            src="/pashas_portfolio/title_image.jpg"
+                            src={`${basePath}/title_image.jpg`}
                             alt="Title Image"
                             fill
                             className="object-cover rounded-md"
@@ -100,24 +103,27 @@ export default function Intro() {
                     </div>
                 </motion.div>
 
+                {/* Right Date & Location */}
                 <motion.div
-                    className="flex flex-col justify-end items-center md:items-end h-full w-full"
+                    className="flex flex-col justify-end items-center lg:items-end w-full"
                     initial={{ opacity: 0, x: 20 }}
                     whileInView={{ opacity: 1, x: 0 }}
-                    viewport={{ once: false }}
                     transition={{ delay: 1.1, duration: 0.6 }}
                 >
-                    <div className="text-right text-xl">
-                        Germantown, MD
-                        <Image
-                            src="/pashas_portfolio/location_icon.svg"
-                            alt="Location Icon"
-                            width={18}
-                            height={18}
-                            className="inline-block mb-4 ml-1"
-                        />
-                        <br />
-                        <span className="font-mono text-6xl tracking-tighter">{currentDate}</span>
+                    <div className="text-center lg:text-right text-base sm:text-lg md:text-xl space-y-2">
+                        <div>
+                            Germantown, MD
+                            <Image
+                                src={`${basePath}/location_icon.svg`}
+                                alt="Location Icon"
+                                width={18}
+                                height={18}
+                                className="inline-block mb-1 ml-1"
+                            />
+                        </div>
+                        <div className="font-mono text-4xl sm:text-5xl md:text-6xl tracking-tighter">
+                            {currentDate}
+                        </div>
                     </div>
                 </motion.div>
             </div>

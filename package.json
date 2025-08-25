@@ -4,7 +4,7 @@
   "private": false,
   "homepage": "https://pavkv.github.io/pashas_portfolio",
   "scripts": {
-    "dev": "next dev",
+    "dev": "next dev --turbopack",
     "build": "next build",
     "deploy": "next build && gh-pages -d out"
   },
