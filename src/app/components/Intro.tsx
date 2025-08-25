@@ -93,7 +93,7 @@ export default function Intro() {
                     whileInView={{ opacity: 1, scale: 1 }}
                     transition={{ delay: 0.9, duration: 0.5 }}
                 >
-                    <div className="relative h-[52vh] sm:h-[50vw] md:h-[35vw] max-w-[300px] aspect-[4/3] object-contain">
+                    <div className="relative h-[45vh] sm:h-[50vw] md:h-[30vw] aspect-[3/4]">
                         <Image
                             src={`${basePath}/title_image.jpg`}
                             alt="Title Image"
