@@ -1,7 +1,7 @@
 'use client';
 
 import { motion } from 'motion/react';
-import { useState } from 'react';
+import React, { useState } from 'react';
 
 const inputVariants = {
     hidden: { opacity: 0, y: 20 },
@@ -13,16 +13,49 @@ const inputVariants = {
 };
 
 export default function Contact() {
-    const [form, setForm] = useState({ name: '', email: '', message: '' });
+    const [form, setForm] = useState({ name: '', email: '', message: '', honeypot: '' });
     const [submitted, setSubmitted] = useState(false);
+    const [error, setError] = useState<string | null>(null);
 
     const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
         setForm({ ...form, [e.target.name]: e.target.value });
     };
 
-    const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
-        e.preventDefault();
-        setSubmitted(true);
+    const handleSubmit = async () => {
+        setError('');
+
+        if (!form.name.trim()) {
+            setError('Please enter your name.');
+            return;
+        }
+        if (!form.email.trim() || !/\S+@\S+\.\S+/.test(form.email)) {
+            setError('Please enter a valid email address.');
+            return;
+        }
+        if (!form.message.trim()) {
+            setError('Please enter your message.');
+            return;
+        }
+
+        try {
+            const res = await fetch('/api/contact', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(form)
+            });
+
+            const result = await res.json();
+            if (res.ok) {
+                setSubmitted(true);
+                setForm({ name: '', email: '', message: '', honeypot: '' });
+            } else {
+                console.error(result?.error || 'Unknown error');
+                setError('Failed to send. Try again later.');
+            }
+        } catch (err) {
+            console.error('Failed to send message:', err);
+            setError('Network error. Please try again.');
+        }
     };
 
     return (
@@ -42,8 +75,7 @@ export default function Contact() {
                 transition={{ duration: 0.8 }}
             >
                 <span className="flex items-end gap-2">
-                    LET&apos;S CONNECT
-                    <span className="mb-1 scale-y-[0.85]">/</span>
+                    LET&apos;S CONNECT <span className="mb-1 scale-y-[0.85]">/</span>
                 </span>
                 <span className="mt-1">WORK TOGETHER</span>
             </motion.h2>
@@ -54,7 +86,18 @@ export default function Contact() {
                 initial={{ opacity: 0, y: 40 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8 }}
+                noValidate
             >
+                <input
+                    type="text"
+                    name="honeypot"
+                    value={form.honeypot}
+                    onChange={handleChange}
+                    className="hidden"
+                    tabIndex={-1}
+                    autoComplete="off"
+                />
+
                 <motion.h3
                     className="text-center text-2xl font-bold text-[#e8e8e2]"
                     initial={{ opacity: 0 }}
@@ -103,18 +146,25 @@ export default function Contact() {
 
                 <motion.button
                     type="button"
+                    onClick={handleSubmit}
                     aria-label="Submit contact form"
                     disabled={submitted}
                     whileHover={{ scale: submitted ? 1 : 1.05 }}
                     whileTap={{ scale: submitted ? 1 : 0.95 }}
-                    className={`w-full py-4 rounded-full font-semibold text-lg transition-colors shadow-md ${
+                    className={`w-full py-4 rounded-full font-semibold text-lg transition-colors shadow-md disabled:opacity-60 disabled:cursor-not-allowed ${
                         submitted
-                            ? 'bg-[#7c0a02] text-[#e8e8e2] cursor-default animate-pulse'
-                            : 'bg-[#e8e8e2] text-[#2b2b2b] hover:bg-[#7c0a02] hover:text-[#e8e8e2] cursor-pointer'
+                            ? 'bg-[#7c0a02] text-[#e8e8e2] animate-pulse'
+                            : 'bg-[#e8e8e2] text-[#2b2b2b] hover:bg-[#7c0a02] hover:text-[#e8e8e2]'
                     }`}
                 >
                     {submitted ? 'Message Sent ✓' : 'Send Message →'}
                 </motion.button>
+
+                {error && (
+                    <p className="text-center text-red-400 text-sm">
+                        {error}
+                    </p>
+                )}
             </motion.form>
         </motion.section>
     );
