@@ -2,7 +2,6 @@
 
 import { useEffect, useRef, useState } from 'react';
 import { motion } from 'motion/react';
-import {basePath} from "@/utils/functions";
 
 const projects = [
     {
@@ -13,7 +12,7 @@ const projects = [
         tag: 'In Development',
         description: 'A modern reimagining of the Theatre Experiment website — a multilingual, media-rich, and accessible digital home for a vibrant theater group.',
         url: 'https://theaterexperiment.com',
-        video: `${basePath}/theater_experiment.mp4`,
+        video: "/theater_experiment.mp4",
     },
     {
         id: 2,
@@ -23,7 +22,7 @@ const projects = [
         tag: 'Full-Stack',
         description: 'Flash Point is a full-stack news app that helps users cut through information overload by enabling keyword-based search, save, and filter of articles.',
         url: 'https://flashpoint.twilightparadox.com/',
-        video: `${basePath}/flash_point.mp4`,
+        video: "/flash_point.mp4",
     },
     {
         id: 3,
@@ -33,7 +32,7 @@ const projects = [
         tag: 'Full-Stack',
         description: 'WTWR is a weather-based clothing recommendation app that offers personalized outfit suggestions based on real-time weather data, helping users dress confidently and appropriately for current conditions.',
         url: 'https://whatowearexpress.twilightparadox.com/',
-        video: `${basePath}/what_to_wear.mp4`,
+        video: "/what_to_wear.mp4",
     },
     {
         id: 4,
@@ -43,7 +42,7 @@ const projects = [
         tag: 'Front-End',
         description: 'SPOTS is a responsive social media app that enables users to share photos and interact with others, offering a simplified, intuitive platform for visual connection and engagement.',
         url: 'https://pavkv.github.io/se_project_spots/',
-        video: `${basePath}/spots.mp4`,
+        video: "/spots.mp4",
     }
 ];
 

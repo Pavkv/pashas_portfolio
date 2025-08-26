@@ -4,7 +4,6 @@ import { useEffect, useState } from 'react';
 import { motion } from "motion/react";
 import { DateTime } from 'luxon';
 import Image from 'next/image';
-import { basePath } from "@/utils/functions";
 
 export default function Intro() {
     const [currentDate, setCurrentDate] = useState('');
@@ -99,7 +98,7 @@ export default function Intro() {
                 >
                     <div className="relative h-[45vh] sm:h-[50vw] md:h-[30vw] aspect-[3/4]">
                         <Image
-                            src={`${basePath}/title_image.jpg`}
+                            src="/title_image.jpg"
                             alt="Title Image"
                             fill
                             className="object-cover rounded-md"
@@ -118,7 +117,7 @@ export default function Intro() {
                         <div>
                             Germantown, MD
                             <Image
-                                src={`${basePath}/location_icon.svg`}
+                                src="/location_icon.svg"
                                 alt="Location Icon"
                                 width={18}
                                 height={18}

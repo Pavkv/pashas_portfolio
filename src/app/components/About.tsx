@@ -1,7 +1,6 @@
 'use client';
 import {motion} from 'motion/react';
 import Image from 'next/image';
-import {basePath} from "@/utils/functions";
 
 const skills = {
     'Languages & Tools': [
@@ -89,7 +88,7 @@ export default function About() {
                     className="relative w-48 sm:w-64 md:w-72 aspect-[3/4]"
                 >
                     <Image
-                        src={`${basePath}/title_image.jpg`}
+                        src="/title_image.jpg"
                         alt="Pavel Zobov"
                         fill
                         className="object-cover rounded-lg"

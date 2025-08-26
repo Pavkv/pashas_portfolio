@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@motionone/utils": "^10.18.0",
+    "@upstash/redis": "^1.35.3",
     "lucide-react": "^0.541.0",
     "luxon": "^3.7.1",
     "motion": "^12.23.12",
@@ -19,13 +20,13 @@
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3",
+    "@tailwindcss/postcss": "^4",
     "@types/luxon": "^3.7.1",
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
     "eslint": "^9",
     "eslint-config-next": "15.4.6",
-    "@tailwindcss/postcss": "^4",
     "tailwindcss": "^4",
     "typescript": "^5"
   }
