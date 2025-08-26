@@ -3,6 +3,7 @@
 import { useEffect, useState } from 'react';
 import { ArrowUp } from 'lucide-react';
 import { handleScroll } from '@/utils/functions';
+import VisitorCounter from "@/app/components/VisitorCounter";
 
 export default function Footer() {
     const [localTime, setLocalTime] = useState<string>('');
@@ -93,6 +94,7 @@ export default function Footer() {
                 <div className="flex flex-col items-start md:items-end">
                     <h3 className="text-sm font-semibold uppercase mb-1">Local Time</h3>
                     <p className="font-mono text-sm text-[#444]">{localTime}</p>
+                    <VisitorCounter />
                 </div>
             </div>
 
