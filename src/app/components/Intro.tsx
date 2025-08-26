@@ -22,7 +22,7 @@ export default function Intro() {
     return (
         <section
             id="intro"
-            className="w-full px-4 sm:px-6 md:px-8 py-24 flex flex-col pb-24 pt-16 text-[#2b2b2b] relative"
+            className="w-full px-4 sm:px-6 md:px-8 pt-16 pb-6 flex flex-col text-[#2b2b2b] relative"
         >
             <motion.div
                 className="w-full"
@@ -31,7 +31,7 @@ export default function Intro() {
                 viewport={{ once: false }}
                 transition={{ duration: 1, ease: 'easeOut' }}
             >
-                <h1 className="max-h-[325px] text-[20.25vw] font-medium leading-[0.9] tracking-tighter text-center">
+                <h1 className="w-full text-[20vw] font-medium leading-[0.9] tracking-tighter text-center whitespace-nowrap">
                     Pavel Zobov
                 </h1>
             </motion.div>
@@ -56,7 +56,9 @@ export default function Intro() {
                     </motion.p>
 
                     <motion.a
-                        href="#contact"
+                        href="https://docs.google.com/document/d/1a1oYkfeqj4O1kCEdXAac1Ra1D4M_dSMDiaLyYw7aEL0/export?format=pdf"
+                        target="_blank"
+                        rel="noopener noreferrer"
                         className="inline-block bg-[#2b2b2b] text-[#e8e8e2] hover:bg-[#a31914] px-6 py-4 rounded-full text-lg transition-colors"
                         initial={{ opacity: 0, scale: 0.95 }}
                         whileInView={{ opacity: 1, scale: 1 }}
@@ -65,8 +67,8 @@ export default function Intro() {
                         whileTap={{ scale: 0.97 }}
                     >
                         <div className="flex items-center gap-2 text-[#e8e8e2] text-lg sm:text-xl">
-                            <span>Contact Me</span>
-                            <div className="w-4 h-4 transform rotate-90 mb-[-1]">
+                            <span>Get Resume</span>
+                            <div className="w-4 h-4 transform rotate-225 mb-[-1]">
                                 <svg
                                     viewBox="0 0 427.5 427.5"
                                     xmlns="http://www.w3.org/2000/svg"
