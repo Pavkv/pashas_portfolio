@@ -79,7 +79,7 @@ export default function Projects() {
     return (
         <section
             id="projects"
-            className="bg-black text-[#e8e8e2] w-full box-border px-4 sm:px-6 md:px-8 py-24 scroll-mt-14"
+            className="w-full px-4 sm:px-6 md:px-8 py-24 bg-black text-[#e8e8e2] box-border scroll-mt-14"
         >
             <motion.h2
                 className="text-5xl md:text-7xl font-extrabold mb-24 tracking-tight flex items-end gap-1"

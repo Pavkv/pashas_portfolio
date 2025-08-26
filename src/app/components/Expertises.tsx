@@ -41,6 +41,7 @@ const expertises = [
 
 export default function Expertises() {
     const sectionRefs = useRef<(HTMLDivElement | null)[]>([]);
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
     const [visible, setVisible] = useState<{ [key: number]: boolean }>({});
 
     useEffect(() => {
@@ -61,6 +62,7 @@ export default function Expertises() {
         });
 
         return () => {
+            // eslint-disable-next-line react-hooks/exhaustive-deps
             sectionRefs.current.forEach((ref) => {
                 if (ref) observer.unobserve(ref);
             });
@@ -70,7 +72,7 @@ export default function Expertises() {
     return (
         <section
             id="expertises"
-            className="bg-black text-[#e8e8e2] w-screen px-4 sm:px-6 md:px-8 py-24 space-y-32"
+            className="w-full px-4 sm:px-6 md:px-8 py-24 bg-black text-[#e8e8e2] space-y-32"
         >
             <motion.h2
                 className="text-5xl md:text-7xl font-extrabold mb-24 tracking-tight flex items-end gap-1"

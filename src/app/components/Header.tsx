@@ -22,7 +22,7 @@ export default function Header() {
             animate={{ y: 0, opacity: 1 }}
             transition={{ duration: 0.6, ease: 'easeOut' }}
         >
-            <div className="max-w-screen-2xl mx-auto flex justify-between items-center px-4 sm:px-6 md:px-8 py-5">
+            <div className="mx-auto flex justify-between items-center px-4 sm:px-6 md:px-8 py-5">
                 <motion.a
                     onClick={() => handleScroll('intro')}
                     className="text-2xl md:text-3xl font-bold tracking-tight cursor-pointer"

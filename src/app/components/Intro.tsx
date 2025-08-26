@@ -22,7 +22,7 @@ export default function Intro() {
     return (
         <section
             id="intro"
-            className="w-full flex flex-col px-4 sm:px-6 md:px-8 pb-24 pt-16 text-[#2b2b2b] relative"
+            className="w-full px-4 sm:px-6 md:px-8 py-24 flex flex-col pb-24 pt-16 text-[#2b2b2b] relative"
         >
             <motion.div
                 className="w-full"
@@ -31,7 +31,7 @@ export default function Intro() {
                 viewport={{ once: false }}
                 transition={{ duration: 1, ease: 'easeOut' }}
             >
-                <h1 className="text-[20.25vw] font-medium leading-[0.9] tracking-tighter scale-y-75 text-center">
+                <h1 className="max-h-[325px] text-[20.25vw] font-medium leading-[0.9] tracking-tighter text-center">
                     Pavel Zobov
                 </h1>
             </motion.div>

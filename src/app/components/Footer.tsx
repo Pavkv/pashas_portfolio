@@ -35,7 +35,7 @@ export default function Footer() {
         'absolute left-0 -bottom-1 w-0 h-[2px] bg-[#7c0a02] transition-all group-hover:w-full';
 
     return (
-        <footer className="w-full overflow-x-hidden bg-[#f5f5f0] text-[#2b2b2b] px-4 sm:px-6 md:px-8 py-16">
+        <footer className="w-full px-4 sm:px-6 md:px-8 py-16 bg-[#f5f5f0] text-[#2b2b2b]">
             <div className="max-w-screen-xl mx-auto grid md:grid-cols-3 gap-16 items-start">
                 {/* Menu */}
                 <div>
