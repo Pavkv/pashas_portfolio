@@ -25,13 +25,15 @@ export default function Intro() {
             className="w-full px-4 sm:px-6 md:px-8 pt-16 pb-6 flex flex-col text-[#2b2b2b] relative"
         >
             <motion.div
-                className="w-full"
+                className="max-w-full"
                 initial={{ opacity: 0, y: -40 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: false }}
                 transition={{ duration: 1, ease: 'easeOut' }}
             >
-                <h1 className="w-full text-[20vw] font-medium leading-[0.9] tracking-tighter text-center whitespace-nowrap">
+                <h1
+                    className="font-medium leading-[0.9] tracking-tighter whitespace-nowrap text-center text-[clamp(2rem,19vw,25rem)]"
+                >
                     Pavel Zobov
                 </h1>
             </motion.div>
